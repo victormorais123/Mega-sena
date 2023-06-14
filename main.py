@@ -1,20 +1,17 @@
 import pygame
 import os
 import random
+from func import lerString
 
-
-
-def obternumeros():
-    NumerosEscolhidos = []
-    while len(NumerosEscolhidos) < 6:
-        entrada = input(f"Digite um numero: ")
-        if entrada.isdigit() and entrada not in NumerosEscolhidos:
-            NumerosEscolhidos.append(int(entrada))
-        else:
+NumerosEscolhidos = []
+while len(NumerosEscolhidos) < 6:
+    try:
+        entrada = int(input("digite um numero: "))
+        if entrada in NumerosEscolhidos or entrada > 60 or entrada == 0:
             print("Entrada invalida!")
-    return NumerosEscolhidos
-
-NumerosEscolhidos = obternumeros()
-
+        else:
+            NumerosEscolhidos.append(int(entrada))
+    except:
+        print("valor incorreto")
 print(NumerosEscolhidos)
 
