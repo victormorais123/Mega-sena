@@ -1,7 +1,7 @@
 import pygame
 import os
 import random
-
+from func import gerarRandomNumeros
 
 
 def obternumeros():
@@ -18,3 +18,5 @@ NumerosEscolhidos = obternumeros()
 
 print(NumerosEscolhidos)
 
+gerarRandomNumeros()
+print(gerarRandomNumeros)
