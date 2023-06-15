@@ -1,8 +1,10 @@
 import pygame
-import os
 import random
-from func import gerarRandomNumeros
 NumerosEscolhidos = []
+numerosComputador = []
+cont = 0
+pygame.init()
+
 while len(NumerosEscolhidos) < 6:
     try:
         entrada = int(input("digite um numero: "))
@@ -13,13 +15,21 @@ while len(NumerosEscolhidos) < 6:
     except:
         print("valor incorreto")
 
-
-NumerosSorteados = gerarRandomNumeros()
-NumerosSorteados.sort()
-
 NumerosEscolhidos.sort()
+rodarnumero = True
 
-
-
-print(NumerosSorteados)
-print(NumerosEscolhidos)
+while rodarnumero:
+    for i in range(0,6):
+        numero = random.randint(0,61)
+        numerosComputador.append(numero)
+    numerosComputador.sort()
+    print(NumerosEscolhidos)
+    print(numerosComputador)
+    if numerosComputador == NumerosEscolhidos:
+        print("parabens, voce ganhou")
+        print("os numeros sorteados foram", numerosComputador)
+        print("foi tentado", cont, "vezes")
+        rodarnumero = False
+    else:
+        cont = cont + 1
+        numerosComputador = []
