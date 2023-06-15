@@ -12,7 +12,14 @@ while len(NumerosEscolhidos) < 6:
             NumerosEscolhidos.append(int(entrada))
     except:
         print("valor incorreto")
-print(NumerosEscolhidos)
 
-gerarRandomNumeros()
-print(gerarRandomNumeros)
+
+NumerosSorteados = gerarRandomNumeros()
+NumerosSorteados.sort()
+
+NumerosEscolhidos.sort()
+
+
+
+print(NumerosSorteados)
+print(NumerosEscolhidos)

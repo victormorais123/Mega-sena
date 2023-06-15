@@ -28,5 +28,5 @@ enviar_sms(numero_destinatario, texto_mensagem)
 
 
 def gerarRandomNumeros():
-    numeros = random.randrange(1,60)
+    numeros = random.sample(range(1,61), 6)
     return numeros
