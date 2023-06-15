@@ -2,9 +2,9 @@ import random
 from twilio.rest import Client
 
 # Configurações da conta Twilio
-account_sid = "SEU_ACCOUNT_SID"
-auth_token = "SEU_AUTH_TOKEN"
-twilio_number = "SEU_NUMERO_TWILIO"
+account_sid = "ACe574d4470e2f2639b84e7349ccc20231"
+auth_token = "472e06106703491e13edb0e0fcb6953b"
+twilio_number = "14302345330"
 
 # Função para enviar SMS
 def enviar_sms(destinatario, mensagem):
@@ -21,8 +21,8 @@ def enviar_sms(destinatario, mensagem):
         print("Erro ao enviar SMS:", str(e))
 
 # Exemplo de uso
-numero_destinatario = ""
-texto_mensagem = ""
+numero_destinatario = "+5554999837827"
+texto_mensagem = "Acertei  numeros"
 
 enviar_sms(numero_destinatario, texto_mensagem)
 

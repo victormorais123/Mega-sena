@@ -1,11 +1,12 @@
 import pygame
 import random
+from func import enviar_sms
 NumerosEscolhidos = []
 numerosComputador = []
 cont = 0
 pygame.init()
 
-while len(NumerosEscolhidos) < 6:
+while len(NumerosEscolhidos) < 2:
     try:
         entrada = int(input("digite um numero: "))
         if entrada in NumerosEscolhidos or entrada > 60 or entrada == 0:
@@ -19,7 +20,7 @@ NumerosEscolhidos.sort()
 rodarnumero = True
 
 while rodarnumero:
-    for i in range(0,6):
+    for i in range(0,2):
         numero = random.randint(0,61)
         numerosComputador.append(numero)
     numerosComputador.sort()
@@ -33,3 +34,4 @@ while rodarnumero:
     else:
         cont = cont + 1
         numerosComputador = []
+enviar_sms("+5554999837827", "Acertei  numeros")
