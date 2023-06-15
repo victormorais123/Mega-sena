@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 from func import enviar_sms , tecladoNum
 
 NumerosEscolhidos = []
@@ -64,7 +65,7 @@ pygame.display.flip()"""
 
 
 
-while len(NumerosEscolhidos) < 2:
+while len(NumerosEscolhidos) < 3:
     try:
         entrada = int(input("digite um numero: "))
         if entrada in NumerosEscolhidos or entrada > 60 or entrada == 0:
@@ -76,19 +77,29 @@ while len(NumerosEscolhidos) < 2:
 
 NumerosEscolhidos.sort()
 rodarnumero = True
-
+inicio = time.time()
 while rodarnumero:
-    for i in range(0,2):
+    
+    for i in range(0,3):
+        
         numero = random.randint(0,61)
         numerosComputador.append(numero)
     numerosComputador.sort()
     print(NumerosEscolhidos)
     print(numerosComputador)
     if numerosComputador == NumerosEscolhidos:
+        fim = time.time()
+        tempo_total = fim - inicio
+        minutos = int(tempo_total // 60)
+        segundos_restantes = int(tempo_total % 60)
+        milisegundos =int((tempo_total % 1) * 1000) 
+        
+        print("Tempo total:", minutos, segundos_restantes, milisegundos)
         print("parabens, voce ganhou")
         print("os numeros sorteados foram", numerosComputador)
         print("foi tentado", cont, "vezes")
         rodarnumero = False
+        
     else:
         cont = cont + 1
         numerosComputador = []
